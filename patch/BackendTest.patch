@@ -1,0 +1,9 @@
+--- BackendTest.cpp	2024-07-30 23:11:03.000000000 +0800
++++ BackendTest_change.cpp	2024-09-20 15:54:16.809552686 +0800
+@@ -749,5 +749,5 @@
+     }
+ };
+ MNNTestSuiteRegister(BackendCopyBufferFloatTest, "engine/backend/copy_buffer_float");
+-//MNNTestSuiteRegister(BackendCopyBufferUint8Test, "engine/backend/copy_buffer_uint8");
++MNNTestSuiteRegister(BackendCopyBufferUint8Test, "engine/backend/copy_buffer_uint8");
+ MNNTestSuiteRegister(CPUBackendCopyBufferTest, "engine/backend/copy_buffer_cpu");

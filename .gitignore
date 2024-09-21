@@ -1,0 +1,6 @@
+*.csv
+result/
+*.txt
+*.out
+models
+test_models

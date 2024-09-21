@@ -1,0 +1,11 @@
+--- CPURuntime.cpp	2024-07-30 23:11:03.000000000 +0800
++++ CPURuntime_change.cpp	2024-09-20 15:14:56.669546954 +0800
+@@ -1295,7 +1295,7 @@
+         cpuinfo_isa->fp16arith = true;
+     }
+     if (isa_features & CPUINFO_ARM_LINUX_FEATURE_I8MM) {
+-        cpuinfo_isa->i8mm = true;
++        cpuinfo_isa->i8mm = false;
+     }
+     isa_features = (uint32_t)getauxval(AT_HWCAP2);
+     if (isa_features & CPUINFO_ARM_LINUX_FEATURE_SVE2) {

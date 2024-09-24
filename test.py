@@ -27,10 +27,10 @@ def test():
     for op_name in op:
         print(f"{GREEN}=============Executing test case: {op_name}================{ENDC}")
         command_without_perf = ["./run_test.out", op_name]
-        command_with_perf = ["./perf.sh", "./run_test.out", op_name]
+        command_with_perf = f"./perf.sh './run_test.out {op_name}'"
+        os.system(command_with_perf)
         try:
             result = subprocess.run(command_without_perf,capture_output=True, text=True, check=True)
-            subprocess.run(command_with_perf,capture_output=True, text=True, check=True)
         except subprocess.CalledProcessError as e:
             print(f"{GREEN}Test case {op_name} failed!{ENDC}")
         # save the test result to test.csv

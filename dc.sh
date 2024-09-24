@@ -26,6 +26,12 @@ make -j20 # 根据实际情况进行调整,默认是j8
 
 cmake .. -DMNN_BUILD_CONVERTER=ON && make -j8
 
+cd ../tools/script/
+# 为了避免网络问题，直接多执行几次即可,此处依赖上面编译的转换工具
+./get_model.sh
+./get_model.sh
+./get_model.sh
+
 if false; then
 # 推理部分
 cmake .. && make -j8

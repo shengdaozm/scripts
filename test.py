@@ -1,8 +1,6 @@
 import os
-import subprocess
 import sys
 import get_test_op
-import csv
 
 GREEN = '\033[92m'
 ENDC = '\033[0m'
@@ -30,22 +28,9 @@ def test():
         command_without_perf = f"./run_test.out {op_name} >test.log"
         command_without_perf2 = f"echo '&&' >>test.log"
         command_with_perf = f"./perf.sh './run_test.out {op_name}'"
-        #os.system(command_with_perf)
+        os.system(command_with_perf)
         os.system(command_without_perf)
-        """
-        try:
-            test_content.append(subprocess.run(command_without_perf,capture_output=True, text=True, check=True).stdout)
-        except subprocess.CalledProcessError as e:
-            print(f"{GREEN}Test case {op_name} failed!{ENDC}")
-        """
-        
-    # 把所有test_content写入csv文件
-    """
-    with open("test.csv", "w",encoding='utf-8',newline='') as f:
-        writer = csv.writer(f)
-        for i in range(len(test_content)):
-            writer.writerow(test_content[i])
-    """
+        os.system(command_without_perf2)
 
     print(f"{GREEN}All test cases have been executed!{ENDC}")
 

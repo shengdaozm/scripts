@@ -41,7 +41,9 @@ def get_op_name(test_ops):
         #"op/ConvInt8/winograd", #arm通过，rv下直接跳过
         #"op/DeconvolutionInt8",# arm失效，rv通过
         #"speed/ConvInt8/winograd", # arm失效，rv通过
-        "model/transformer" 
+        "model/transformer" ,
+        "plugin" ,# plugin只在release版本支持，构建动态库无法使用
+        "model/model_test"
         ]
     # 在test_ops中删除位于delete_ops中的op
     for op in delete_ops:

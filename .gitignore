@@ -4,3 +4,4 @@ result/
 *.out
 models
 test_models
+.log

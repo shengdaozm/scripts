@@ -25,8 +25,14 @@ def txt_to_csv(txt_file_path, csv_file_path):
                     writer.writerow([block])
 
 
-txtfile = sys.argv[1]  
-csvfile = sys.argv[2]
 
-txt_to_csv(txtfile, csvfile)
-print(f"{GREEN}results have been saved to csv file!{ENDC}")
+def log2csv(log_file_path, csv_file_path):
+    with open('a.log', 'r') as file:
+        content = file.read()
+        sections = [section.strip() for section in content.split("The device ") if section.strip()]
+    with open('a.csv', 'w', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        for section in sections:
+            writer.writerow(["the device "+section])
+
+log2csv("a","b")
